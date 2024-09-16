@@ -31,6 +31,12 @@ def calc():
     if equation !="":
         try:
             result= eval(equation)
+            if isinstance (result, float):
+                result = round(result, 2)
+            if result > 999999999:
+                result = "Error: Limit"
+            else:
+                equation=str(result)
         except:
             result="Error"
             equation =""
